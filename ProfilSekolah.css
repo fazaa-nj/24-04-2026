@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7a0000;
+}
+
+/* CONTAINER */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "navbar navbar navbar"
+        "ads content content"
+        "footer footer footer";
+
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 15px;
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* HEADER */
+header {
+    grid-area: header;
+    background: linear-gradient(135deg, #8B0000, #b22222);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* HEADER FLEX */
+.header-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* NAVBAR */
+nav {
+    grid-area: navbar;
+    background: #f3dede;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+}
+
+nav li {
+    font-weight: bold;
+}
+
+.btn {
+    background: #8B0000;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* ADS */
+.ads {
+    grid-area: ads;
+    background: #f3dede;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* CONTENT */
+.content {
+    grid-area: content;
+    background: #a52a2a;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* GRID JURUSAN */
+.jurusan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card {
+    background: #f5f5f5;
+    color: black;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* BUTTON */
+button {
+    background: #5c0000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    grid-area: footer;
+    background: #5c0000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* LINK WA */
+footer a {
+    color: #ffdede;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "navbar"
+            "content"
+            "ads"
+            "footer";
+
+        grid-template-columns: 1fr;
+    }
+
+    .jurusan {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
